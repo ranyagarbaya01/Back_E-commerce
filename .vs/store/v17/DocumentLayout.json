@@ -91,8 +91,7 @@
               "RelativeToolTip": "Models\\User.cs",
               "ViewState": "AQIAAAwAAAAAAAAAAAA5wBwAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T14:08:10.099Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T14:08:10.099Z"
             },
             {
               "$type": "Document",
@@ -104,8 +103,7 @@
               "RelativeToolTip": "Models\\Produit.cs",
               "ViewState": "AQIAABIAAAAAAAAAAAAswCMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T08:22:21.567Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T08:22:21.567Z"
             },
             {
               "$type": "Document",
@@ -117,8 +115,7 @@
               "RelativeToolTip": "Models\\FamilleDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T07:52:28.581Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T07:52:28.581Z"
             },
             {
               "$type": "Document",
@@ -130,8 +127,7 @@
               "RelativeToolTip": "Models\\ProduitDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T07:36:07.202Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T07:36:07.202Z"
             },
             {
               "$type": "Document",
@@ -143,8 +139,7 @@
               "RelativeToolTip": "Models\\TypeDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T07:35:59.888Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T07:35:59.888Z"
             },
             {
               "$type": "Document",
@@ -156,8 +151,7 @@
               "RelativeToolTip": "Models\\Type.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T07:35:14.692Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T07:35:14.692Z"
             },
             {
               "$type": "Document",
@@ -169,8 +163,7 @@
               "RelativeToolTip": "Controllers\\ProduitsController.cs",
               "ViewState": "AQIAAE0AAAAAAAAAAAAwwGEAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T07:33:06.242Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T07:33:06.242Z"
             },
             {
               "$type": "Document",
@@ -182,8 +175,7 @@
               "RelativeToolTip": "Controllers\\TypeFamilleController.cs",
               "ViewState": "AQIAABAAAAAAAAAAAAAiwCIAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T07:31:38.642Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T07:31:38.642Z"
             },
             {
               "$type": "Document",
@@ -195,8 +187,7 @@
               "RelativeToolTip": "Models\\UserDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T14:09:28.978Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T14:09:28.978Z"
             },
             {
               "$type": "Document",
@@ -208,8 +199,7 @@
               "RelativeToolTip": "Controllers\\AuthController.cs",
               "ViewState": "AQIAAC8AAAAAAAAAAAAswE8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T17:44:32.642Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-29T17:44:32.642Z"
             }
           ]
         },
