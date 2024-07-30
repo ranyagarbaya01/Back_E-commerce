@@ -27,7 +27,6 @@ namespace store.Models
 
         [Required]
         [Column(TypeName = "decimal(18,6)")]
-        [RegularExpression(@"\d+(\.\d{1,6})?", ErrorMessage = "PrixTTC must have up to 3 decimal places.")]
         public decimal PrixTTC { get; set; }
 
         [ForeignKey("Famille")]

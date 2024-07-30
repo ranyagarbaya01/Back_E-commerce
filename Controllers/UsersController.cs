@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using store.Data;
 using store.Models;
 
@@ -15,6 +19,7 @@ namespace Ecommerce.Controllers
     public class UsersController : ControllerBase
     {
         private readonly storeContext _context;
+
 
         public UsersController(storeContext context)
         {
@@ -125,7 +130,7 @@ namespace Ecommerce.Controllers
                 dbobj.Password = obj.Password;
                 dbobj.PhoneNumber = obj.PhoneNumber;
                 dbobj.type = obj.type;
-
+                dbobj.token = obj.token;
                 _context.SaveChanges();
                 return Ok(dbobj);
             }
@@ -135,14 +140,22 @@ namespace Ecommerce.Controllers
             }
         }
 
-        [HttpPost]
+    [HttpPost]
         public async Task<ActionResult<User>> PostUser(User user)
         {
+            var useri = new User()
+            { FullName =user.FullName,
+            Email = user.Email,
+            Password = user.Password,
+            PhoneNumber = user.PhoneNumber,
+            type = user.type,
+
+            };
             
-            _context.User.Add(user);
+            _context.User.Add(useri);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetUser", new { id = user.Id }, user);
+            return CreatedAtAction("GetUser", new { id = useri.Id }, useri);
         }
 
         [HttpDelete("{id}")]
@@ -164,5 +177,8 @@ namespace Ecommerce.Controllers
         {
             return _context.User.Any(e => e.Id == id);
         }
+
+
+
     }
 }

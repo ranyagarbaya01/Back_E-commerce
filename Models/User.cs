@@ -25,8 +25,11 @@ namespace store.Models
         public string PhoneNumber { get; set; } = string.Empty;
 
         [Required]
-        [Column(TypeName = "nvarchar(255)")]
+        [Column(TypeName = "int")]
         public int type { get; set; } = 0;
+
+        [Column(TypeName = "nvarchar(255)")]
+        public string? token { get; set; } = "";
 
     }
 }

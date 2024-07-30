@@ -533,3 +533,4 @@ E:\projet_ecommerce.net\store\obj\Debug\net8.0\refint\store.dll
 E:\projet_ecommerce.net\store\obj\Debug\net8.0\store.pdb
 E:\projet_ecommerce.net\store\obj\Debug\net8.0\store.genruntimeconfig.cache
 E:\projet_ecommerce.net\store\obj\Debug\net8.0\ref\store.dll
+E:\projet_ecommerce.net\store\obj\Debug\net8.0\store.sourcelink.json

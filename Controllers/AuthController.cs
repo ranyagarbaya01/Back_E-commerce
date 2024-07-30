@@ -37,10 +37,11 @@ namespace Ecommerce.Controllers
             }
 
             var token = GenerateJwtToken(user);
+
             return Ok(new { Token = token,
+                            id=user.Id,
                             FullName = user.FullName,
                             Email = user.Email,
-                            Password = user.Password,
                             Type = user.type,
                             PhoneNumber = user.PhoneNumber
 

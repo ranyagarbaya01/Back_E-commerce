@@ -13,6 +13,7 @@
         public string PhoneNumber { get; set; } = "";
 
         public int type { get; set; } = 0;
+        public string? token { get; set; } = "";
 
 
 
