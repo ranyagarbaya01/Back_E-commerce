@@ -37,9 +37,8 @@ namespace store.Models
         [ForeignKey("User")]
         public int idUser { get; set; }
         public User? User { get; set; }
-        [ForeignKey("Address")]
-        public int idAddress { get; set; }
-        public Address? Address { get; set; }
+
+      
 
     }
 }

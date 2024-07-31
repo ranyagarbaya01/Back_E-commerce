@@ -31,5 +31,22 @@ namespace store.Models
         [Column(TypeName = "nvarchar(255)")]
         public string? token { get; set; } = "";
 
+      
+        [Column(TypeName = "nvarchar(255)")]
+        public string? FirstName { get; set; }
+        
+        [Column(TypeName = "nvarchar(255)")]
+        public string? LastName { get; set; }
+       
+        [Column(TypeName = "nvarchar(255)")]
+        public string? State { get; set; }
+        
+        [Column(TypeName = "nvarchar(255)")]
+
+        public string? Street { get; set; }
+       
+        [Column(TypeName = "nvarchar(255)")]
+        public string? Zipcode { get; set; }
+
     }
 }

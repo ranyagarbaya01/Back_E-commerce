@@ -19,11 +19,11 @@ namespace store.Data
         public DbSet<Produit> Produit { get; set; }
         public DbSet<Famille> Famille { get; set; }
         public DbSet<store.Models.Type> Type { get; set; }
-        public DbSet<Image> Images { get; set; }
+        public DbSet<Image> Images { get; set; } 
         public DbSet<User> User { get; set; }
         public DbSet<Commande> Commande { get; set; }
         public DbSet<DétailsCommande> DétailsCommande { get; set; }
-        public DbSet<Address> Address { get; set; }
+    
 
 
     }

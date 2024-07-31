@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using store.Data;
 
@@ -11,9 +12,11 @@ using store.Data;
 namespace store.Migrations
 {
     [DbContext(typeof(storeContext))]
-    partial class storeContextModelSnapshot : ModelSnapshot
+    [Migration("20240730160235_InitialCreate12345")]
+    partial class InitialCreate12345
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,6 +24,43 @@ namespace store.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("store.Models.Address", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("State")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("Street")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("Zipcode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Address");
+                });
 
             modelBuilder.Entity("store.Models.BasketItem", b =>
                 {
@@ -89,10 +129,15 @@ namespace store.Migrations
                     b.Property<decimal>("TotalTVA")
                         .HasColumnType("decimal(18,6)");
 
+                    b.Property<int>("idAddress")
+                        .HasColumnType("int");
+
                     b.Property<int>("idUser")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("idAddress");
 
                     b.HasIndex("idUser");
 
@@ -129,9 +174,6 @@ namespace store.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("CommandeId")
-                        .HasColumnType("int");
-
                     b.Property<decimal>("PrixTotal")
                         .HasColumnType("decimal(18,6)");
 
@@ -141,12 +183,15 @@ namespace store.Migrations
                     b.Property<int>("Qte")
                         .HasColumnType("int");
 
+                    b.Property<int>("idCommande")
+                        .HasColumnType("int");
+
                     b.Property<int>("idProduit")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CommandeId");
+                    b.HasIndex("idCommande");
 
                     b.HasIndex("idProduit");
 
@@ -260,14 +305,8 @@ namespace store.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(255)");
-
                     b.Property<string>("FullName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(255)");
-
-                    b.Property<string>("LastName")
                         .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("Password")
@@ -276,15 +315,6 @@ namespace store.Migrations
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
-                        .HasColumnType("nvarchar(255)");
-
-                    b.Property<string>("State")
-                        .HasColumnType("nvarchar(255)");
-
-                    b.Property<string>("Street")
-                        .HasColumnType("nvarchar(255)");
-
-                    b.Property<string>("Zipcode")
                         .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("token")
@@ -307,26 +337,38 @@ namespace store.Migrations
 
             modelBuilder.Entity("store.Models.Commande", b =>
                 {
+                    b.HasOne("store.Models.Address", "Address")
+                        .WithMany()
+                        .HasForeignKey("idAddress")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("store.Models.User", "User")
                         .WithMany()
                         .HasForeignKey("idUser")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("Address");
+
                     b.Navigation("User");
                 });
 
             modelBuilder.Entity("store.Models.DétailsCommande", b =>
                 {
-                    b.HasOne("store.Models.Commande", null)
+                    b.HasOne("store.Models.Commande", "Commande")
                         .WithMany("Items")
-                        .HasForeignKey("CommandeId");
+                        .HasForeignKey("idCommande")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("store.Models.Produit", "Produit")
                         .WithMany()
                         .HasForeignKey("idProduit")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Commande");
 
                     b.Navigation("Produit");
                 });

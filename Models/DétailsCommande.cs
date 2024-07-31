@@ -26,8 +26,6 @@ namespace store.Models
         public int idProduit { get; set; }
         public Produit? Produit { get; set; }
 
-        [ForeignKey("Commande")]
-        public int idCommande { get; set; }
-        public Commande? Commande { get; set; }
+       
     }
 }
